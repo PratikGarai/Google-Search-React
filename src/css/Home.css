@@ -34,7 +34,6 @@
 }
 
 .home__body {
-    flex: 1;
     display: flex;
     margin-top: 10%;
     flex-direction: column;
