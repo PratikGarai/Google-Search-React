@@ -9,11 +9,12 @@ function App() {
       <Router>
         <Switch>
           <Route path="/search">
-            
+            <Result />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
-        <Home />
-        <Result />
       </Router>
     </div>
   );
