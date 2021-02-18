@@ -9,11 +9,11 @@ import { actionTypes } from '../reducer';
 
 import '../css/Search.css'
 
-const Search = ({ hideButtons = false }) => {
+const Search = ({ hideButtons = false , data = "" }) => {
 
     const [{}, dispatch] = useStateValue();
 
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState(data);
     const history = useHistory();
 
     const search = (e) => {

@@ -10,7 +10,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 import { useStateValue } from '../StateProvider';
 import useGoogleSearch from '../useGoogleSearch';
-import response from '../response';
+//import response from '../response';
 import SearchCard from '../components/SearchCard';
 
 import '../css/Result.css';
@@ -18,8 +18,8 @@ import '../css/Result.css';
 const Result = (props) => {
 
     const [{term}, {}] = useStateValue();
-    // const data = useGoogleSearch(term);
-    const data = response;
+    const data = useGoogleSearch(term);
+    //const data = response;
 
     console.log(data);
     return (
@@ -29,7 +29,7 @@ const Result = (props) => {
                     <img className="searchPage__logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="The Google Logo" />
                 </Link>
                 <div className="searchPage__header__body">
-                    <Search hideButtons />
+                    <Search hideButtons data={term} />
                     <div className="searchPage__options">
                         <div className="searchPage__optionsLeft">
                             <div className="searchPage__option">
@@ -80,7 +80,6 @@ const Result = (props) => {
                 </div>
                 
             )}
-            This is result page for : {term}
         </div>
     );
 }
